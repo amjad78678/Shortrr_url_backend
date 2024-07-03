@@ -1,8 +1,10 @@
 import express from "express";
-import { Home } from "../controllers/controller";
+import { Login, Signup } from "../controllers/controller";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/',(req,res)=>Home(req,res))
+router.post("/login", (req, res) => Login(req, res));
+router.post("/signup", (req, res) => Signup(req, res));
 
-export default router
+
+export default router;

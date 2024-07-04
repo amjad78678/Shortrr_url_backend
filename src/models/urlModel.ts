@@ -33,10 +33,7 @@ const UrlSchema: Schema = new Schema<Document | IUrl>(
     timestamps: true,
   }
 );
-UrlSchema.pre("deleteOne", { document: true, query: false }, async function () {
-  const urlId = this._id;
-  await ClicksModel.deleteMany({ url_id: urlId });
-});
+
 
 const UrlModel: Model<Document | IUrl> = mongoose.model<IUrl | Document>(
   "Url",

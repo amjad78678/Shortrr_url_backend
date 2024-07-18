@@ -25,6 +25,7 @@ app.use(morgan("tiny"));
 const startServer = async () => {
   await connectDb();
   //All Routes
+
   app.use("/api", router);
 
   app.listen(PORT, () => {
